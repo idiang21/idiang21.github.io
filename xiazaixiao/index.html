@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>免费下载小游戏-免安装休闲小游戏资源与下载指南</title>
+<meta name="description" content="免费下载小游戏专区，整理免安装、体积小巧的休闲小游戏类型与下载方式，包含益智、动作、模拟、棋牌等分类，并提供安全下载与安装注意事项。">
+<meta name="keywords" content="免费下载小游戏,小游戏下载,免安装小游戏,休闲小游戏,单机小游戏">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+:root{
+  --bg:#0f1424;
+  --bg-soft:#161d33;
+  --card:#1c2540;
+  --line:#2a3454;
+  --text:#e8ecf7;
+  --muted:#9aa5c4;
+  --accent:#4ade80;
+  --accent-2:#38bdf8;
+  --warn:#fbbf24;
+  --radius:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,-apple-system,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+  font-size:15px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px;}
+
+/* ===== header ===== */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(15,20,36,.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;height:64px;
+}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;letter-spacing:.5px;}
+.logo-mark{
+  width:34px;height:34px;border-radius:10px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:grid;place-items:center;color:#08111f;font-size:17px;font-weight:800;
+}
+.logo small{display:block;font-size:11px;color:var(--muted);font-weight:400;letter-spacing:1px;}
+.main-nav{display:flex;gap:4px;flex-wrap:wrap;}
+.main-nav a{
+  padding:8px 13px;border-radius:9px;font-size:14px;color:var(--muted);
+  transition:.2s;
+}
+.main-nav a:hover{color:var(--text);background:var(--bg-soft);}
+.nav-toggle{
+  display:none;background:var(--bg-soft);border:1px solid var(--line);
+  color:var(--text);border-radius:9px;padding:7px 12px;font-size:14px;cursor:pointer;
+}
+
+/* ===== hero ===== */
+.hero{
+  padding:56px 0 46px;
+  background:
+    radial-gradient(900px 320px at 12% -10%,rgba(74,222,128,.16),transparent 60%),
+    radial-gradient(800px 320px at 88% 0%,rgba(56,189,248,.14),transparent 60%);
+  border-bottom:1px solid var(--line);
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.35fr .9fr;gap:40px;align-items:center;
+}
+.hero h1{font-size:34px;line-height:1.35;letter-spacing:.5px;margin-bottom:16px;}
+.hero h1 em{font-style:normal;color:var(--accent);}
+.hero p.lead{color:var(--muted);font-size:15.5px;margin-bottom:22px;max-width:640px;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 22px;border-radius:11px;font-size:14.5px;font-weight:600;
+  border:1px solid transparent;transition:.2s;cursor:pointer;
+}
+.btn-primary{background:linear-gradient(135deg,var(--accent),#22c55e);color:#06210f;}
+.btn-primary:hover{filter:brightness(1.08);transform:translateY(-1px);}
+.btn-ghost{background:transparent;border-color:var(--line);color:var(--text);}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
+
+.hero-panel{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;
+}
+.hero-panel h2{font-size:15px;margin-bottom:14px;color:var(--accent-2);letter-spacing:.5px;}
+.hero-panel ul{list-style:none;display:grid;gap:11px;}
+.hero-panel li{display:flex;gap:10px;font-size:13.5px;color:var(--muted);}
+.hero-panel li b{color:var(--text);font-weight:600;}
+.dot{
+  flex:0 0 auto;width:8px;height:8px;border-radius:50%;
+  background:var(--accent);margin-top:8px;
+}
+
+/* ===== section base ===== */
+section{padding:52px 0;}
+.section-head{margin-bottom:26px;}
+.section-head h2{
+  font-size:23px;letter-spacing:.4px;display:flex;align-items:center;gap:10px;
+}
+.section-head h2::before{
+  content:"";width:5px;height:20px;border-radius:3px;
+  background:linear-gradient(180deg,var(--accent),var(--accent-2));
+}
+.section-head p{color:var(--muted);font-size:14px;margin-top:8px;}
+
+/* ===== category cards ===== */
+.cat-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:16px;
+}
+.cat-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px;transition:.22s;
+}
+.cat-card:hover{transform:translateY(-3px);border-color:var(--accent);}
+.cat-icon{
+  width:42px;height:42px;border-radius:11px;display:grid;place-items:center;
+  font-size:20px;margin-bottom:13px;background:var(--bg-soft);
+}
+.cat-card h3{font-size:16px;margin-bottom:8px;}
+.cat-card p{font-size:13.5px;color:var(--muted);}
+.cat-tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px;}
+.tag{
+  font-size:12px;padding:3px 9px;border-radius:20px;
+  background:var(--bg-soft);color:var(--muted);border:1px solid var(--line);
+}
+
+/* ===== recommend list ===== */
+.rec-list{display:grid;gap:14px;}
+.rec-item{
+  display:grid;grid-template-columns:64px 1fr auto;gap:16px;align-items:center;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 18px;transition:.2s;
+}
+.rec-item:hover{border-color:var(--accent-2);}
+.rec-thumb{
+  width:64px;height:64px;border-radius:12px;display:grid;place-items:center;
+  font-size:26px;background:linear-gradient(145deg,#22305a,#182142);
+}
+.rec-body h3{font-size:16px;margin-bottom:5px;}
+.rec-body p{font-size:13.5px;color:var(--muted);}
+.rec-meta{font-size:12.5px;color:var(--muted);text-align:right;white-space:nowrap;}
+.rec-meta span{display:block;}
+
+/* ===== steps ===== */
+.steps{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;
+  counter-reset:step;
+}
+.step{
+  background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;position:relative;
+}
+.step::before{
+  counter-increment:step;content:counter(step,decimal-leading-zero);
+  font-size:26px;font-weight:800;color:var(--accent);
+  opacity:.55;display:block;margin-bottom:10px;letter-spacing:1px;
+}
+.step h3{font-size:15.5px;margin-bottom:8px;}
+.step p{font-size:13.5px;color:var(--muted);}
+
+/* ===== tips / notice ===== */
+.notice{
+  background:linear-gradient(135deg,rgba(251,191,36,.09),rgba(251,191,36,.03));
+  border:1px solid rgba(251,191,36,.35);
+  border-radius:var(--radius);padding:22px 24px;
+}
+.notice h2{font-size:18px;margin-bottom:12px;color:var(--warn);display:flex;gap:9px;align-items:center;}
+.notice ul{list-style:none;display:grid;gap:10px;}
+.notice li{
+  font-size:13.8px;color:var(--muted);padding-left:18px;position:relative;
+}
+.notice li::before{
+  content:"";position:absolute;left:0;top:9px;width:7px;height:7px;
+  border-radius:50%;background:var(--warn);
+}
+.notice li b{color:var(--text);}
+
+/* ===== comparison table ===== */
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);}
+table{width:100%;border-collapse:collapse;min-width:640px;font-size:13.8px;}
+thead th{
+  background:var(--bg-soft);text-align:left;padding:13px 16px;
+  color:var(--accent-2);font-weight:600;white-space:nowrap;
+}
+tbody td{padding:13px 16px;border-top:1px solid var(--line);color:var(--muted);}
+tbody td:first-child{color:var(--text);font-weight:600;}
+tbody tr:hover{background:rgba(255,255,255,.02);}
+
+/* ===== faq ===== */
+.faq{display:grid;gap:12px;}
+.faq-item{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;
+}
+.faq-q{
+  width:100%;text-align:left;background:none;border:none;color:var(--text);
+  font-size:15px;font-weight:600;padding:17px 20px;cursor:pointer;
+  display:flex;justify-content:space-between;gap:14px;align-items:center;
+  font-family:inherit;
+}
+.faq-q::after{content:"+";color:var(--accent);font-size:19px;transition:.2s;}
+.faq-item.open .faq-q::after{transform:rotate(45deg);}
+.faq-a{
+  max-height:0;overflow:hidden;transition:max-height .28s ease;
+  padding:0 20px;color:var(--muted);font-size:13.8px;
+}
+.faq-item.open .faq-a{max-height:340px;padding-bottom:18px;}
+
+/* ===== footer ===== */
+.site-footer{
+  border-top:1px solid var(--line);background:var(--bg-soft);
+  padding:38px 0 26px;margin-top:20px;
+}
+.footer-grid{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px;margin-bottom:26px;
+}
+.footer-grid h3{font-size:14.5px;margin-bottom:13px;color:var(--text);}
+.footer-grid p{font-size:13.2px;color:var(--muted);}
+.footer-links{list-style:none;display:grid;gap:9px;}
+.footer-links a{font-size:13.2px;color:var(--muted);transition:.2s;}
+.footer-links a:hover{color:var(--accent);}
+.copyright{
+  border-top:1px solid var(--line);padding-top:18px;
+  font-size:12.5px;color:var(--muted);text-align:center;
+}
+
+/* ===== responsive ===== */
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:28px;}
+  .hero h1{font-size:27px;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:720px){
+  .main-nav{
+    display:none;position:absolute;top:64px;left:0;right:0;
+    background:var(--bg-soft);border-bottom:1px solid var(--line);
+    flex-direction:column;padding:10px 18px 16px;
+  }
+  .main-nav.open{display:flex;}
+  .main-nav a{padding:11px 8px;}
+  .nav-toggle{display:block;}
+  section{padding:38px 0;}
+  .hero{padding:38px 0 34px;}
+  .hero h1{font-size:23px;}
+  .rec-item{grid-template-columns:52px 1fr;gap:13px;}
+  .rec-thumb{width:52px;height:52px;font-size:22px;}
+  .rec-meta{grid-column:1 / -1;text-align:left;display:flex;gap:14px;}
+  .rec-meta span{display:inline;}
+  .footer-grid{grid-template-columns:1fr;gap:22px;}
+  .section-head h2{font-size:20px;}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="#top">
+      <span class="logo-mark">游</span>
+      <span>轻玩小游戏库<small>FREE MINI GAMES</small></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="展开导航">菜单</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#categories">游戏分类</a>
+      <a href="#recommend">热门推荐</a>
+      <a href="#howto">下载流程</a>
+      <a href="#compare">类型对比</a>
+      <a href="#safety">安全提示</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>免费下载小游戏：<em>免安装、体积小</em>的休闲游戏怎么找、怎么装</h1>
+        <p class="lead">
+          想在工作间隙、通勤路上或睡前玩几分钟，又不想为一个大体积客户端占用空间？小游戏通常安装包小、启动快、对设备要求低，适合碎片时间。本页围绕“免费下载小游戏”这一需求，说明常见类型、挑选标准、下载与安装步骤，以及如何避开捆绑与来源不明的文件。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#categories">按分类找游戏</a>
+          <a class="btn btn-ghost" href="#safety">先看安全提示</a>
+        </div>
+      </div>
+      <aside class="hero-panel">
+        <h2>挑选小游戏时先确认这几点</h2>
+        <ul>
+          <li><span class="dot"></span><span><b>来源可信</b>：优先选择应用商店、开发者官网或知名平台。</span></li>
+          <li><span class="dot"></span><span><b>权限合理</b>：休闲游戏一般不需要通讯录、短信等敏感权限。</span></li>
+          <li><span class="dot"></span><span><b>体积与配置</b>：先看安装包大小和最低系统版本是否匹配设备。</span></li>
+          <li><span class="dot"></span><span><b>是否含广告</b>：免费游戏常以内嵌广告变现，提前了解可减少打扰。</span></li>
+          <li><span class="dot"></span><span><b>是否需要联网</b>：单机可离线玩，联网类注意流量与账号登录。</span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 分类 -->
+  <section id="categories">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>小游戏常见分类</h2>
+        <p>不同玩法对操作、时长和专注度要求不同，先想清楚自己想要的节奏，再决定下载哪一类。</p>
+      </div>
+      <div class="cat-grid">
+        <article class="cat-card">
+          <div class="cat-icon">🧩</div>
+          <h3>益智解谜</h3>
+          <p>以逻辑推理、数字、图形为主，节奏慢，适合随时暂停，单局时间可控。</p>
+          <div class="cat-tags"><span class="tag">数独</span><span class="tag">消除</span><span class="tag">拼图</span></div>
+        </article>
+        <article class="cat-card">
+          <div class="cat-icon">🏃</div>
+          <h3>动作闯关</h3>
+          <p>反应与手速为核心，关卡短小，失败成本低，适合几分钟一局。</p>
+          <div class="cat-tags"><span class="tag">跑酷</span><span class="tag">跳跃</span><span class="tag">躲避</span></div>
+        </article>
+        <article class="cat-card">
+          <div class="cat-icon">🏡</div>
+          <h3>模拟经营</h3>
+          <p>种植、开店、建造等慢节奏玩法，进度可长期积累，适合放松。</p>
+          <div class="cat-tags"><span class="tag">经营</span><span class="tag">放置</span><span class="tag">养成</span></div>
+        </article>
+        <article class="cat-card">
+          <div class="cat-icon">♟️</div>
+          <h3>棋牌对局</h3>
+          <p>规则熟悉、上手快，可人机也可联机，注意选择无强制充值的版本。</p>
+          <div class="cat-tags"><span class="tag">象棋</span><span class="tag">五子棋</span><span class="tag">纸牌</span></div>
+        </article>
+        <article class="cat-card">
+          <div class="cat-icon">🎯</div>
+          <h3>休闲竞技</h3>
+          <p>单局时间短、匹配快，适合与朋友一起玩，通常需要网络连接。</p>
+          <div class="cat-tags"><span class="tag">对战</span><span class="tag">比分</span><span class="tag">联机</span></div>
+        </article>
+        <article class="cat-card">
+          <div class="cat-icon">🎵</div>
+          <h3>音乐节奏</h3>
+          <p>跟随节拍点击或滑动，对音画同步和设备性能有一定要求。</p>
+          <div class="cat-tags"><span class="tag">节奏</span><span class="tag">音游</span><span class="tag">按键</span></div>
+        </article>
+        <article class="cat-card">
+          <div class="cat-icon">🕹️</div>
+          <h3>怀旧像素</h3>
+          <p>复古画风与经典玩法，安装包往往很小，老设备也能流畅运行。</p>
+          <div class="cat-tags"><span class="tag">像素</span><span class="tag">街机</span><span class="tag">复刻</span></div>
+        </article>
+        <article class="cat-card">
+          <div class="cat-icon">🧠</div>
+          <h3>文字推理</h3>
+          <p>以文字和选择推进剧情，几乎不占存储，适合阅读型玩家。</p>
+          <div class="cat-tags"><span class="tag">文字</span><span class="tag">剧情</span><span class="tag">选择</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 推荐 -->
+  <section id="recommend">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>值得优先尝试的玩法方向</h2>
+        <p>以下按玩法特征归纳，不指向特定产品；实际下载时请以应用商店或开发者官方页面的最新信息为准。</p>
+      </div>
+      <div class="rec-list">
+        <article class="rec-item">
+          <div class="rec-thumb">⏱️</div>
+          <div class="rec-body">
+            <h3>三分钟一局的轻量闯关</h3>
+            <p>关卡短、失败可立即重来，适合排队、等车等零散时间。挑选时关注是否有体力限制与强制广告间隔。</p>
+          </div>
+          <div class="rec-meta"><span>单局 1–3 分钟</span><span>可离线</span></div>
+        </article>
+        <article class="rec-item">
+          <div class="rec-thumb">🌱</div>
+          <div class="rec-body">
+            <h3>放置型养成与经营</h3>
+            <p>离线也会累积收益，每天上线收一次即可。注意区分“纯放置”和“需要频繁操作”的伪放置玩法。</p>
+          </div>
+          <div class="rec-meta"><span>低操作频率</span><span>长期进度</span></div>
+        </article>
+        <article class="rec-item">
+          <div class="rec-thumb">🧮</div>
+          <div class="rec-body">
+            <h3>数字与逻辑解谜</h3>
+            <p>规则简单但思考深度足够，适合想安静动脑的场景。此类游戏通常安装包小，对设备性能要求低。</p>
+          </div>
+          <div class="rec-meta"><span>无网络可玩</span><span>体积小</span></div>
+        </article>
+        <article class="rec-item">
+          <div class="rec-thumb">👥</div>
+          <div class="rec-body">
+            <h3>可本地双人的对战小游戏</h3>
+            <p>同一台设备轮流或分屏操作，适合朋友聚会。下载前确认是否支持本地模式，避免必须登录账号才能开始。</p>
+          </div>
+          <div class="rec-meta"><span>本地双人</span><span>无需账号</span></div>
+        </article>
+        <article class="rec-item">
+          <div class="rec-thumb">📖</div>
+          <div class="rec-body">
+            <h3>文字剧情与选择分支</h3>
+            <p>以阅读和选择为主，占用空间极小。适合喜欢故事但不想投入大量操作时间的玩家。</p>
+          </div>
+          <div class="rec-meta"><span>低配置</span><span>随时存档</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 下载流程 -->
+  <section id="howto">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>免费下载小游戏的常规流程</h2>
+        <p>无论是手机还是电脑，流程基本一致，关键在于来源核对与安装前的权限确认。</p>
+      </div>
+      <div class="steps">
+        <article class="step">
+          <h3>确定设备与系统</h3>
+          <p>先确认是安卓、iOS、Windows 还是网页端。系统版本过低可能导致无法安装或闪退。</p>
+        </article>
+        <article class="step">
+          <h3>选择正规获取渠道</h3>
+          <p>优先使用系统自带应用商店或开发者官网。第三方站点下载前，核对文件格式与开发者名称。</p>
+        </article>
+        <article class="step">
+          <h3>查看详情与评价</h3>
+          <p>关注安装包大小、更新时间、所需权限和近期用户反馈，判断是否与描述相符。</p>
+        </article>
+        <article class="step">
+          <h3>安装并检查权限</h3>
+          <p>安装过程中若出现与玩法无关的权限请求，可选择拒绝或放弃安装。</p>
+        </article>
+        <article class="step">
+          <h3>首次运行设置</h3>
+          <p>按需关闭推送、个性化推荐等选项，减少后续打扰，再开始正式游玩。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 对比 -->
+  <section id="compare">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>不同获取方式的特点对比</h2>
+        <p>同样是小游戏，安装版、网页版和小程序在使用体验上差别明显，可按场景选择。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>获取方式</th>
+              <th>是否占用存储</th>
+              <th>是否需要网络</th>
+              <th>适合场景</th>
+              <th>注意事项</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>应用商店安装</td>
+              <td>占用一定空间</td>
+              <td>首次下载需联网</td>
+              <td>长期游玩、进度存档</td>
+              <td>留意权限与内购说明</td>
+            </tr>
+            <tr>
+              <td>网页即点即玩</td>
+              <td>几乎不占用</td>
+              <td>基本需要联网</td>
+              <td>临时体验、试玩</td>
+              <td>关闭页面进度可能丢失</td>
+            </tr>
+            <tr>
+              <td>小程序 / 轻应用</td>
+              <td>占用较少</td>
+              <td>需要网络</td>
+              <td>社交分享、快速开局</td>
+              <td>依赖平台账号体系</td>
+            </tr>
+            <tr>
+              <td>电脑单机小游戏</td>
+              <td>视文件大小而定</td>
+              <td>可完全离线</td>
+              <td>无网络环境、长时间游玩</td>
+              <td>注意压缩包来源与解压安全</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 安全提示 -->
+  <section id="safety">
+    <div class="wrap">
+      <div class="notice">
+        <h2>⚠ 下载与安装时的安全提示</h2>
+        <ul>
+          <li><b>核对来源</b>：不要从陌生聊天群、论坛附件或短链接直接下载安装包，这类渠道难以追溯文件是否被修改。</li>
+          <li><b>看权限清单</b>：休闲小游戏通常只需要存储、网络等基础权限。若要求读取通讯录、短信或后台定位，应提高警惕。</li>
+          <li><b>警惕“破解版”“无限金币版”</b>：此类文件常被二次打包，可能携带多余程序，也可能导致账号被封禁。</li>
+          <li><b>安装前扫描</b>：电脑端下载的压缩包或可执行文件，建议先用系统自带安全中心或正规杀毒软件扫描。</li>
+          <li><b>谨慎授权支付</b>：涉及内购的游戏，建议关闭免密支付，并定期检查订阅与扣费记录。</li>
+          <li><b>保护个人信息</b>：注册账号时尽量不填写真实姓名、身份证号等非必要信息。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>常见问题</h2>
+        <p>关于免费小游戏下载，以下问题被问得最多。</p>
+      </div>
+      <div class="faq" id="faqBox">
+        <div class="faq-item">
+          <button class="faq-q" type="button">免费下载的小游戏真的不用花钱吗？</button>
+          <div class="faq-a">
+            <p>多数免费小游戏采用“免费下载 + 内嵌广告”或“基础免费 + 可选内购”的模式，下载本身不收费。但部分游戏会在关卡推进、道具获取等环节设置付费点，是否消费完全取决于个人选择。下载前可先看商店页面的“内购项目”说明，做到心里有数。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">小游戏会占用很多手机存储吗？</button>
+          <div class="faq-a">
+            <p>相比大型手游，多数休闲小游戏的安装包较小，但安装后还会产生缓存和存档数据，实际占用通常大于安装包本身。如果设备空间紧张，可以定期在系统设置中清理游戏缓存，或优先选择网页版、小程序等无需完整安装的形式。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">没有网络可以玩吗？</button>
+          <div class="faq-a">
+            <p>取决于游戏类型。单机益智、解谜、部分模拟经营类通常支持离线游玩；竞技对战、排行榜、需要账号同步进度的游戏一般需要联网。下载前可查看商店页面是否标注“离线可玩”，或先试玩确认。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">为什么有些小游戏安装时要求很多权限？</button>
+          <div class="faq-a">
+            <p>合理的权限通常与功能相关，例如存储用于保存进度、网络用于加载广告或同步数据。如果出现与玩法明显无关的权限请求，建议先拒绝该项权限，观察游戏能否正常运行；若必须授权才能使用，可考虑更换其他同类游戏。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">电脑上玩小游戏需要注意什么？</button>
+          <div class="faq-a">
+            <p>电脑端常见形式包括网页小游戏和下载安装的单机小游戏。下载类应尽量选择开发者官网或可信平台，解压前先扫描文件；安装过程中留意是否勾选了额外的捆绑软件选项，取消不需要的勾选即可。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">游戏进度会丢失吗？</button>
+          <div class="faq-a">
+            <p>如果游戏支持账号登录或云端存档，更换设备后一般可以恢复进度；纯本地存档的游戏在卸载、清理数据或更换设备后可能丢失。对进度比较在意的玩家，可优先选择支持云存档的作品，或定期备份存档文件。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>关于本站</h3>
+        <p>本站是一个小游戏玩法与下载方式的信息整理页面，帮助玩家按类型、场景和设备条件找到合适的休闲小游戏，并了解下载与安装过程中的注意事项。站内不提供安装包托管，具体下载请以官方渠道为准。</p>
+      </div>
+      <div>
+        <h3>内容导航</h3>
+        <ul class="footer-links">
+          <li><a href="#categories">游戏分类</a></li>
+          <li><a href="#recommend">玩法推荐</a></li>
+          <li><a href="#howto">下载流程</a></li>
+          <li><a href="#compare">方式对比</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>帮助与提示</h3>
+        <ul class="footer-links">
+          <li><a href="#safety">安全下载提示</a></li>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#top">返回顶部</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2024 轻玩小游戏库 · 内容仅供学习与参考，请通过正规渠道获取游戏资源
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var toggle = document.getElementById('navToggle');
+  var nav = document.getElementById('mainNav');
+  if(toggle && nav){
+    toggle.addEventListener('click', function(){
+      nav.classList.toggle('open');
+    });
+    nav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){ nav.classList.remove('open'); }
+    });
+  }
+
+  var faqBox = document.getElementById('faqBox');
+  if(faqBox){
+    faqBox.addEventListener('click', function(e){
+      var btn = e.target.closest('.faq-q');
+      if(!btn) return;
+      var item = btn.parentElement;
+      var isOpen = item.classList.contains('open');
+      var all = faqBox.querySelectorAll('.faq-item');
+      for(var i=0;i<all.length;i++){ all[i].classList.remove('open'); }
+      if(!isOpen){ item.classList.add('open'); }
+    });
+  }
+})();
+</script>
+</body>
+  </html>
