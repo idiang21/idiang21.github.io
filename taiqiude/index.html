@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>台球的基本知识与打法 - 入门规则、握杆姿势与练习指南</title>
+<meta name="description" content="系统讲解台球的基本知识与打法，包括常见台球种类、球台与器材认识、握杆站姿、瞄准击球、走位思路、犯规规则以及新手练习方法，帮助初学者快速上手。">
+<meta name="keywords" content="台球的基本知识与打法,台球入门,台球规则,握杆姿势,瞄准技巧,台球练习方法">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+:root{
+  --felt:#0f5132;
+  --felt-dark:#0a3a24;
+  --felt-light:#1a7a4c;
+  --wood:#5b3a1e;
+  --wood-light:#8a5a2b;
+  --chalk:#2f80ed;
+  --ink:#17211c;
+  --muted:#5c6b63;
+  --line:#dfe6e1;
+  --paper:#f7faf8;
+  --white:#ffffff;
+  --radius:14px;
+  --shadow:0 6px 20px rgba(15,81,50,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,-apple-system,sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.75;
+  font-size:16px;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* 页眉 */
+.site-header{
+  background:linear-gradient(180deg,var(--felt) 0%,var(--felt-dark) 100%);
+  color:#eaf5ef;
+  position:relative;
+  overflow:hidden;
+}
+.site-header::after{
+  content:"";
+  position:absolute;
+  right:-60px;top:-60px;
+  width:260px;height:260px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.16),transparent 70%);
+}
+.topbar{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;padding:16px 0;position:relative;z-index:2;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{
+  width:44px;height:44px;border-radius:50%;
+  background:radial-gradient(circle at 32% 28%,#ffffff,#d8e6dd 45%,#8fb3a0);
+  display:grid;place-items:center;
+  font-weight:800;color:var(--felt-dark);font-size:15px;
+  box-shadow:inset -3px -4px 8px rgba(0,0,0,.18);
+}
+.brand-text b{display:block;font-size:19px;letter-spacing:.5px;color:#fff}
+.brand-text span{font-size:12.5px;color:#a9cbb8;letter-spacing:1px}
+.main-nav ul{display:flex;gap:6px;list-style:none;flex-wrap:wrap}
+.main-nav a{
+  display:block;padding:8px 14px;border-radius:999px;
+  font-size:14.5px;color:#d7ece0;transition:.2s;
+}
+.main-nav a:hover,.main-nav a.active{background:rgba(255,255,255,.14);color:#fff}
+
+/* 首屏 */
+.hero{position:relative;z-index:2;padding:22px 0 54px}
+.hero-grid{
+  display:grid;grid-template-columns:1.35fr 1fr;gap:34px;align-items:center;
+}
+.hero h1{
+  font-size:clamp(26px,3.6vw,40px);
+  line-height:1.3;color:#fff;letter-spacing:.5px;
+}
+.hero h1 em{font-style:normal;color:#8fe0b4}
+.hero p.lead{
+  margin-top:16px;color:#c8e2d4;font-size:16.5px;max-width:600px;
+}
+.hero-actions{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-block;padding:11px 24px;border-radius:999px;
+  font-size:15px;font-weight:600;transition:.22s;border:1px solid transparent;
+}
+.btn-primary{background:#8fe0b4;color:#0a3a24}
+.btn-primary:hover{background:#a9ecc8;transform:translateY(-2px)}
+.btn-ghost{border-color:rgba(255,255,255,.4);color:#eaf5ef}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+
+/* 球台示意 */
+.table-card{
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:var(--radius);
+  padding:18px;
+  backdrop-filter:blur(2px);
+}
+.felt{
+  position:relative;
+  background:radial-gradient(circle at 50% 40%,var(--felt-light),var(--felt) 65%,var(--felt-dark));
+  border:12px solid var(--wood);
+  border-radius:10px;
+  aspect-ratio:2/1;
+  box-shadow:inset 0 0 40px rgba(0,0,0,.35);
+}
+.pocket{
+  position:absolute;width:26px;height:26px;border-radius:50%;
+  background:#12100e;box-shadow:inset 0 2px 6px rgba(0,0,0,.7);
+}
+.pocket.tl{left:-13px;top:-13px}
+.pocket.tr{right:-13px;top:-13px}
+.pocket.bl{left:-13px;bottom:-13px}
+.pocket.br{right:-13px;bottom:-13px}
+.pocket.tm{left:50%;top:-13px;transform:translateX(-50%)}
+.pocket.bm{left:50%;bottom:-13px;transform:translateX(-50%)}
+.ball{
+  position:absolute;border-radius:50%;
+  box-shadow:inset -3px -4px 7px rgba(0,0,0,.35),0 2px 4px rgba(0,0,0,.3);
+}
+.ball.cue{width:22px;height:22px;background:radial-gradient(circle at 34% 30%,#fff,#e2e2e2);left:18%;top:50%;transform:translateY(-50%)}
+.ball.red{width:22px;height:22px;background:radial-gradient(circle at 34% 30%,#ff7b6b,#b3251a);right:22%;top:34%}
+.ball.yellow{width:22px;height:22px;background:radial-gradient(circle at 34% 30%,#ffe27a,#c99a09);right:30%;top:62%}
+.ball.blue{width:22px;height:22px;background:radial-gradient(circle at 34% 30%,#7cb8ff,#14509e);right:38%;top:44%}
+.table-caption{margin-top:12px;font-size:13px;color:#a9cbb8;text-align:center}
+
+/* 内容区通用 */
+.section{padding:52px 0}
+.section-head{margin-bottom:28px}
+.section-head h2{
+  font-size:clamp(21px,2.6vw,28px);
+  color:var(--felt-dark);
+  position:relative;padding-left:16px;
+}
+.section-head h2::before{
+  content:"";position:absolute;left:0;top:6px;bottom:6px;width:5px;
+  border-radius:3px;background:linear-gradient(180deg,var(--felt-light),var(--chalk));
+}
+.section-head p{margin-top:10px;color:var(--muted);font-size:15px;max-width:760px}
+
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+
+.card{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:22px;
+  transition:.24s;
+}
+.card:hover{box-shadow:var(--shadow);transform:translateY(-3px);border-color:#c9ded3}
+.card h3{font-size:17.5px;color:var(--felt-dark);margin-bottom:10px}
+.card p{font-size:14.6px;color:var(--muted)}
+.card .tag{
+  display:inline-block;font-size:12px;padding:3px 10px;border-radius:999px;
+  background:#e6f4ec;color:var(--felt);margin-bottom:12px;font-weight:600;
+}
+
+/* 基础知识列表 */
+.know-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.know-item{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px 22px;display:flex;gap:16px;align-items:flex-start;
+}
+.know-num{
+  flex:0 0 40px;height:40px;border-radius:12px;
+  background:linear-gradient(140deg,var(--felt-light),var(--felt));
+  color:#fff;display:grid;place-items:center;font-weight:700;font-size:16px;
+}
+.know-item h3{font-size:16.5px;color:var(--felt-dark);margin-bottom:6px}
+.know-item p{font-size:14.5px;color:var(--muted)}
+
+/* 打法步骤 */
+.steps{counter-reset:step;display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.step{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;position:relative;padding-top:26px;
+}
+.step::before{
+  counter-increment:step;content:counter(step,decimal-leading-zero);
+  position:absolute;top:-14px;left:20px;
+  background:var(--chalk);color:#fff;font-size:13px;font-weight:700;
+  padding:4px 12px;border-radius:999px;letter-spacing:1px;
+}
+.step h3{font-size:16.5px;color:var(--felt-dark);margin-bottom:8px}
+.step p{font-size:14.5px;color:var(--muted)}
+.step ul{margin:10px 0 0 18px;font-size:14.2px;color:var(--muted)}
+.step li{margin-bottom:4px}
+
+/* 规则表 */
+.rule-table{
+  width:100%;border-collapse:collapse;background:var(--white);
+  border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  font-size:14.5px;
+}
+.rule-table th,.rule-table td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--line)}
+.rule-table th{background:#eef6f1;color:var(--felt-dark);font-weight:700;font-size:14.5px}
+.rule-table tr:last-child td{border-bottom:none}
+.rule-table td:first-child{font-weight:600;color:var(--felt-dark);white-space:nowrap}
+
+/* 侧栏提示 */
+.notice{
+  background:linear-gradient(135deg,#eef6f1,#e2f0e8);
+  border-left:5px solid var(--felt-light);
+  border-radius:10px;padding:18px 22px;margin:26px 0;
+}
+.notice strong{color:var(--felt-dark)}
+.notice p{font-size:14.6px;color:#3c4f45;margin-top:6px}
+
+/* 常见问题 */
+.faq-item{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  margin-bottom:14px;overflow:hidden;
+}
+.faq-item summary{
+  cursor:pointer;padding:18px 22px;font-weight:600;font-size:16px;
+  color:var(--felt-dark);list-style:none;display:flex;justify-content:space-between;gap:12px;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";font-size:20px;color:var(--felt-light);line-height:1}
+.faq-item[open] summary::after{content:"–"}
+.faq-item .faq-body{padding:0 22px 20px;font-size:14.8px;color:var(--muted)}
+
+/* 练习计划 */
+.plan{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.plan-col{
+  background:var(--white);border:1px solid var(--line);
+  border-radius:var(--radius);padding:22px;
+}
+.plan-col h3{font-size:16.5px;color:var(--felt-dark);margin-bottom:12px}
+.plan-col ul{list-style:none;font-size:14.4px;color:var(--muted)}
+.plan-col li{padding-left:20px;position:relative;margin-bottom:8px}
+.plan-col li::before{
+  content:"";position:absolute;left:0;top:9px;width:8px;height:8px;
+  border-radius:50%;background:var(--chalk);
+}
+
+/* 页脚 */
+.site-footer{
+  background:var(--felt-dark);color:#a9cbb8;padding:44px 0 26px;margin-top:20px;
+}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}
+.footer-grid h4{color:#fff;font-size:16px;margin-bottom:14px}
+.footer-grid p,.footer-grid li{font-size:14px;line-height:1.9}
+.footer-grid ul{list-style:none}
+.footer-grid a:hover{color:#8fe0b4}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.12);
+  margin-top:30px;padding-top:18px;font-size:13px;text-align:center;color:#7ea892;
+}
+
+/* 响应式 */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr}
+  .grid-3,.grid-4,.plan{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:680px){
+  body{font-size:15.4px}
+  .topbar{flex-direction:column;align-items:flex-start}
+  .main-nav ul{gap:4px}
+  .main-nav a{padding:6px 11px;font-size:13.5px}
+  .grid-2,.grid-3,.grid-4,.know-list,.steps,.plan{grid-template-columns:1fr}
+  .section{padding:38px 0}
+  .hero{padding:10px 0 40px}
+  .footer-grid{grid-template-columns:1fr}
+  .rule-table{font-size:13.6px}
+  .rule-table th,.rule-table td{padding:10px 12px}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="brand-mark">球</div>
+        <div class="brand-text">
+          <b>台球入门指南</b>
+          <span>BASIC KNOWLEDGE &amp; TECHNIQUE</span>
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="主导航">
+        <ul>
+          <li><a href="#basics" class="active">基础知识</a></li>
+          <li><a href="#technique">打法要领</a></li>
+          <li><a href="#rules">常见规则</a></li>
+          <li><a href="#practice">练习方法</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="hero">
+      <div class="hero-grid">
+        <div>
+          <h1>台球的基本知识与打法：<em>从零开始学会看球、握杆与出杆</em></h1>
+          <p class="lead">
+            台球是一项对姿势、力度与判断要求很高的运动。初学者最常遇到的困惑，往往是先学规则还是先练姿势、球杆该握多紧、为什么明明瞄准了却打不进。本文把台球的基本知识与打法拆成“认识器材—掌握姿势—理解规则—有序练习”四条线索，帮助你建立一套可以自己复盘的入门框架。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#basics">开始了解基础</a>
+            <a class="btn btn-ghost" href="#practice">查看练习计划</a>
+          </div>
+        </div>
+
+        <div class="table-card" aria-label="球台结构示意图">
+          <div class="felt">
+            <span class="pocket tl"></span><span class="pocket tm"></span><span class="pocket tr"></span>
+            <span class="pocket bl"></span><span class="pocket bm"></span><span class="pocket br"></span>
+            <span class="ball cue"></span>
+            <span class="ball red"></span>
+            <span class="ball yellow"></span>
+            <span class="ball blue"></span>
+          </div>
+          <p class="table-caption">球台由台面、库边、袋口与球杆组成，白色为主球</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- 基础知识 -->
+  <section class="section" id="basics">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>先认识台球：项目分类与器材构成</h2>
+        <p>不同台球项目使用的球台尺寸、球数、袋口和规则差异很大。开始练习之前，先弄清楚自己接触的是哪一类，能避免用错方法。</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <span class="tag">中式八球</span>
+          <h3>国内最常见的项目</h3>
+          <p>使用一颗主球加十五颗目标球，分为全色球与花色球两组。开球后先合法进球的一方确定自己的球组，清完本组后再打黑八。球台尺寸适中，袋口相对宽容，适合新手建立手感。</p>
+        </article>
+        <article class="card">
+          <span class="tag">斯诺克</span>
+          <h3>强调走位与防守</h3>
+          <p>球台更大、袋口更窄，使用十五颗红球与六颗彩球。得分依赖连续进攻与母球走位控制，对出杆稳定性和线路判断的要求明显更高，通常建议先具备一定基础再尝试。</p>
+        </article>
+        <article class="card">
+          <span class="tag">美式九球</span>
+          <h3>节奏快、观赏性强</h3>
+          <p>只使用一号到九号球，按号码顺序击打，打进九号球即获胜。开球与连续进攻的比重较大，适合喜欢快节奏对抗的球友。</p>
+        </article>
+      </div>
+
+      <div class="notice">
+        <strong>器材小提示：</strong>
+        <p>球杆按前节材质与后把结构区分，新手不必一开始就追求高价球杆。更重要的是选择一支重量适中、握把不滑、皮头状态良好的球杆，并保持每次使用同一支，便于形成稳定的手感记忆。</p>
+      </div>
+
+      <div class="know-list">
+        <div class="know-item">
+          <div class="know-num">01</div>
+          <div>
+            <h3>球台与台呢</h3>
+            <p>台面平整度、台呢绒面方向和湿度都会影响球的滚动速度。同一张球台在不同天气下速度也会变化，练习时要学会根据实际滚动距离调整力度。</p>
+          </div>
+        </div>
+        <div class="know-item">
+          <div class="know-num">02</div>
+          <div>
+            <h3>库边与袋口</h3>
+            <p>库边决定反弹角度，袋口决定容错范围。击球前先观察目标球与袋口的相对位置，判断是直接进攻还是需要借库，能显著提高成功率。</p>
+          </div>
+        </div>
+        <div class="know-item">
+          <div class="know-num">03</div>
+          <div>
+            <h3>主球与目标球</h3>
+            <p>主球（白球）是唯一由球员直接击打的球，目标球是被撞击的球。理解两球碰撞后的分离方向，是学习走位和做球的基础。</p>
+          </div>
+        </div>
+        <div class="know-item">
+          <div class="know-num">04</div>
+          <div>
+            <h3>巧克粉与皮头</h3>
+            <p>巧克粉用于增加皮头与主球之间的摩擦力，减少滑杆。每次击球前轻擦一下即可，涂得过厚反而会影响击球点的准确性。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 打法要领 -->
+  <section class="section" id="technique" style="background:#eef6f1;">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>台球的基本打法：从站位到出杆的完整顺序</h2>
+        <p>动作顺序固定下来之后，击球的稳定性会明显提升。下面六个环节建议按顺序练习，不要跳步。</p>
+      </div>
+
+      <div class="steps">
+        <article class="step">
+          <h3>站位与重心</h3>
+          <p>双脚分开约与肩同宽，身体侧对击球方向，重心略微前倾并落在前脚。身体稳定的前提是脚下踏实，而不是靠手臂去硬撑。</p>
+          <ul>
+            <li>前脚指向击球方向，后脚自然打开</li>
+            <li>上半身尽量保持不动，避免起伏</li>
+          </ul>
+        </article>
+
+        <article class="step">
+          <h3>握杆的松紧</h3>
+          <p>握杆过紧会让出杆僵硬，过松则容易失控。合适的力度类似握住一只小鸟——不让它飞走，也不把它捏疼。</p>
+          <ul>
+            <li>用后手手掌与手指自然包裹球杆</li>
+            <li>手腕保持放松，不要刻意甩腕</li>
+          </ul>
+        </article>
+
+        <article class="step">
+          <h3>手架与支撑</h3>
+          <p>手架是球杆的支点，直接影响出杆是否平直。常见的有开放式手架与闭合式手架，前者视野好，后者稳定性更强。</p>
+          <ul>
+            <li>手掌贴台，手指自然分开形成支撑</li>
+            <li>球杆在手指形成的凹槽中滑动顺畅</li>
+          </ul>
+        </article>
+
+        <article class="step">
+          <h3>瞄准与视线</h3>
+          <p>先确定目标球要进的袋口，再倒推主球应该撞击目标球的哪一点。瞄准时头部保持在球杆正上方，让视线与出杆方向一致。</p>
+          <ul>
+            <li>用“假想球”方法判断撞击点</li>
+            <li>击球前多站后观察，减少临场犹豫</li>
+          </ul>
+        </article>
+
+        <article class="step">
+          <h3>试杆与出杆</h3>
+          <p>试杆是正式击球前的节奏确认，一般来回两到三次。出杆时保持匀速加速，随杆自然送出，不要突然停顿或猛力抽打。</p>
+          <ul>
+            <li>出杆后球杆保持指向目标方向</li>
+            <li>身体不要随出杆前冲</li>
+          </ul>
+        </article>
+
+        <article class="step">
+          <h3>力度与旋转</h3>
+          <p>力度决定主球撞击后的行进距离，击球点高低左右则决定旋转。初学者建议先用中杆中力，把直线球打稳，再逐步尝试高低杆和侧旋。</p>
+          <ul>
+            <li>高杆跟进、低杆回缩、中杆基本停住</li>
+            <li>侧旋会改变反弹角度，需谨慎使用</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 规则 -->
+  <section class="section" id="rules">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>必须了解的常见规则与犯规</h2>
+        <p>规则的作用是让对抗有据可依。不同地区、不同球房的具体判罚可能略有差异，正式比赛前建议先确认采用哪一套规则。</p>
+      </div>
+
+      <table class="rule-table">
+        <thead>
+          <tr>
+            <th>情形</th>
+            <th>一般判罚</th>
+            <th>说明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>主球落袋</td>
+            <td>犯规</td>
+            <td>俗称“白球进袋”，对手通常获得自由球或手中球机会，具体依项目而定。</td>
+          </tr>
+          <tr>
+            <td>未碰到任何球</td>
+            <td>犯规</td>
+            <td>出杆后主球没有接触到任何目标球，属于空杆。</td>
+          </tr>
+          <tr>
+            <td>先碰到对方球</td>
+            <td>犯规</td>
+            <td>在分组项目中，主球应先接触本方球组，否则视为犯规。</td>
+          </tr>
+          <tr>
+            <td>球跳出台面</td>
+            <td>犯规</td>
+            <td>目标球被击出台面，通常由对手获得相应处理权。</td>
+          </tr>
+          <tr>
+            <td>双脚离地</td>
+            <td>犯规</td>
+            <td>击球瞬间至少应有一只脚接触地面，否则判为犯规。</td>
+          </tr>
+          <tr>
+            <td>连击或推杆</td>
+            <td>犯规</td>
+            <td>球杆与主球发生多次接触，或主球与目标球同时被推着走。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="notice">
+        <strong>关于自由球：</strong>
+        <p>对手犯规后，你通常可以把主球放在台面允许的位置再击球，这一权利叫自由球或手中球。摆放位置时优先考虑既容易进攻、又能为下一杆留下好走位的点，而不是只看眼前这一杆。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 练习方法 -->
+  <section class="section" id="practice" style="background:#eef6f1;">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>新手练习方法：按阶段推进更有效</h2>
+        <p>台球水平的提升来自重复与反馈。与其漫无目的地打整局，不如把练习拆成有明确目标的小任务。</p>
+      </div>
+
+      <div class="plan">
+        <div class="plan-col">
+          <h3>第一阶段：稳定动作</h3>
+          <ul>
+            <li>空杆练习：不摆球，只练出杆平直</li>
+            <li>直线球：主球、目标球、袋口成一条线</li>
+            <li>固定距离反复击打，记录成功率</li>
+            <li>每次练习控制在三十分钟左右</li>
+          </ul>
+        </div>
+        <div class="plan-col">
+          <h3>第二阶段：控制力度</h3>
+          <ul>
+            <li>同一球位用不同力度击打，观察停位</li>
+            <li>练习高杆跟进与低杆回缩的基本效果</li>
+            <li>尝试让主球停在指定区域</li>
+            <li>逐步加入角度球，理解分离方向</li>
+          </ul>
+        </div>
+        <div class="plan-col">
+          <h3>第三阶段：走位与实战</h3>
+          <ul>
+            <li>连续打进多颗球，规划每一杆的停位</li>
+            <li>练习借库、翻袋等进阶线路</li>
+            <li>与水平相近的球友对局，复盘失误</li>
+            <li>记录常犯错误并针对性重复</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top:26px;">
+        <article class="card">
+          <h3>练习时容易忽略的细节</h3>
+          <p>很多人只关注球有没有进，却忽略了出杆是否平直、身体是否晃动、击球点是否准确。建议在练习时留出一部分时间专门观察动作本身，而不是只看结果。</p>
+        </article>
+        <article class="card">
+          <h3>如何复盘一局球</h3>
+          <p>打完一局后回想：哪些球是明明能进却打丢的？失误来自瞄准、力度还是姿势？把原因写下来，下次练习时优先解决出现频率最高的那一类问题。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 常见问题 -->
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>台球入门常见问题</h2>
+        <p>以下是初学者在学习台球基本知识与打法时最常提出的疑问。</p>
+      </div>
+
+      <details class="faq-item" open>
+        <summary>完全没有基础，应该先学规则还是先练姿势？</summary>
+        <div class="faq-body">
+          建议先了解最基础的规则，知道什么算犯规、怎样算得分，再集中练习站位、握杆和出杆。规则可以在对局中逐步熟悉，但姿势一旦形成错误习惯，后期纠正会比较费力。
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>为什么瞄准了却总是打不进？</summary>
+        <div class="faq-body">
+          常见原因有三种：一是站位偏了，导致视线与出杆方向不一致；二是出杆时身体或手腕晃动；三是击球点没有打在预想位置。可以先用直线球做对照练习，逐一排查。
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>握杆到底应该多紧？</summary>
+        <div class="faq-body">
+          以能稳定控制球杆、又不会让手部僵硬为准。握得太紧会让出杆变形，太松则容易脱手。可以在空杆练习中反复感受，找到出杆最顺畅的那个力度。
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>新手适合先用什么样的球杆？</summary>
+        <div class="faq-body">
+          优先考虑重量适中、握感舒适、皮头完好的球杆。材质和价位并不是决定因素，保持长期使用同一支球杆，更有利于建立稳定的手感。
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>每天练多久比较合适？</summary>
+        <div class="faq-body">
+          与其一次练很久，不如保持规律。每次三十分钟到一小时、每周固定几次，通常比偶尔长时间练习效果更好。练习时要有明确目标，而不是单纯地打球。
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>侧旋球有必要很早就学吗？</summary>
+        <div class="faq-body">
+          不必。侧旋会同时改变主球的行进线路和反弹角度，控制难度较高。建议先把中杆、高杆、低杆和基本走位练稳，再逐步引入侧旋。
+        </div>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>台球入门指南</h4>
+        <p>围绕台球的基本知识与打法，整理器材认识、动作要领、规则判罚与练习方法，帮助初学者用清晰的顺序入门，减少无效摸索。</p>
+      </div>
+      <div>
+        <h4>内容导航</h4>
+        <ul>
+          <li><a href="#basics">基础知识</a></li>
+          <li><a href="#technique">打法要领</a></li>
+          <li><a href="#rules">常见规则</a></li>
+          <li><a href="#practice">练习方法</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>学习建议</h4>
+        <ul>
+          <li>先固定动作，再追求准度</li>
+          <li>每次练习设定一个目标</li>
+          <li>记录失误并定期复盘</li>
+          <li>不同球台需重新适应速度</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 台球入门指南 · 内容仅供学习参考，具体比赛规则请以所在场地或赛事规定为准
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var links = document.querySelectorAll('.main-nav a');
+  links.forEach(function(link){
+    link.addEventListener('click', function(){
+      links.forEach(function(l){ l.classList.remove('active'); });
+      link.classList.add('active');
+    });
+  });
+})();
+</script>
+
+</body>
+  </html>
